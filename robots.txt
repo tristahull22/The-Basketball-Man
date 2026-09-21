@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://basketballman.com.au/sitemap.xml
