@@ -23,20 +23,20 @@ old WordPress site so their search rankings and any existing links carry over.
 The others need redirects — see `docs/DNS-AND-REDIRECTS.md`.
 
 Links and asset paths are relative, so the site works from a domain root, from a
-subfolder such as `username.github.io/basketballman-site/`, or opened straight off
+subfolder such as `tristahull22.github.io/The-Basketball-Man/`, or opened straight off
 a hard drive. That makes it easy to preview before the domain is switched over.
 
 ---
 
 ## Publishing it (GitHub Pages)
 
-1. Create a repository in the client's GitHub account — `basketballman-site` is a
-   sensible name. Public is fine; GitHub Pages on free accounts requires it.
-2. Upload everything in this folder to the repository root. Either drag the files
-   into GitHub's web uploader, or from a terminal:
+1. The repository is `tristahull22/The-Basketball-Man` (public, as GitHub Pages
+   requires on free accounts).
+2. Upload the *contents* of this folder to the repository root — not the folder
+   itself. Drag them into GitHub's web uploader, or from a terminal:
 
    ```
-   git remote add origin https://github.com/<account>/basketballman-site.git
+   git remote add origin https://github.com/tristahull22/The-Basketball-Man.git
    git branch -M main
    git push -u origin main
    ```
@@ -44,10 +44,12 @@ a hard drive. That makes it easy to preview before the domain is switched over.
 3. In the repository: **Settings → Pages**. Under *Build and deployment*, set
    **Source** to *Deploy from a branch*, branch `main`, folder `/ (root)`. Save.
 4. A preview appears within a minute at
-   `https://<account>.github.io/basketballman-site/`. Send that link to the client
-   for sign-off before touching DNS.
+   `https://tristahull22.github.io/The-Basketball-Man/`. Send that link to the
+   client for sign-off before touching DNS.
 5. When it's approved, under *Custom domain* enter `basketballman.com.au` and save.
-   (The `CNAME` file in this repo already contains that domain.)
+   GitHub creates a `CNAME` file in the repo at that point — that is expected.
+   Do not add that file earlier: with it present, the `github.io` preview URL
+   redirects to a domain that isn't pointing here yet, and the preview breaks.
 6. Once DNS has propagated, tick **Enforce HTTPS**. The certificate can take up to
    24 hours to issue — the box stays greyed out until then.
 
@@ -127,7 +129,6 @@ assets/css/site.css        all styling, design tokens at the top
 assets/js/site.js          mobile menu, form fallback (about 50 lines)
 assets/img/                photos, logo, favicon
 assets/fonts/              Poppins, self-hosted (no Google Fonts call)
-CNAME                      custom domain for GitHub Pages
 robots.txt, sitemap.xml    search engine basics
 .nojekyll                  stops GitHub from processing the files
 docs/                      handover notes

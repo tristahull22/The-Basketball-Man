@@ -30,10 +30,11 @@ At the domain's DNS host, for the apex:
 | AAAA | `@` | `2606:50c0:8001::153` | 3600 |
 | AAAA | `@` | `2606:50c0:8002::153` | 3600 |
 | AAAA | `@` | `2606:50c0:8003::153` | 3600 |
-| CNAME | `www` | `<github-account>.github.io` | 3600 |
+| CNAME | `www` | `tristahull22.github.io` | 3600 |
 
-Replace `<github-account>` with the account that owns the repository. The CNAME
-points at the account's Pages domain, not at the repository.
+`tristahull22` is the GitHub account hosting the site
+(repository: `tristahull22/The-Basketball-Man`). The CNAME points at the account's
+Pages domain, not at the repository — there is no repository name in the value.
 
 GitHub Pages handles the `www` → apex redirect itself once both the CNAME record
 and the custom domain setting are in place, so no separate rule is needed for that.
@@ -93,7 +94,7 @@ visitors back to the main sections.
 ## 4. Cutover sequence
 
 1. Repository published and GitHub Pages enabled.
-2. Client signs off on the preview at `https://<account>.github.io/<repo>/`.
+2. Client signs off on the preview at `https://tristahull22.github.io/The-Basketball-Man/`.
 3. Enquiry form connected and tested (see the README).
 4. Custom domain set in Settings → Pages.
 5. TTLs lowered on the existing web records.
